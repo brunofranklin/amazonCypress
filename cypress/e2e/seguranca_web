@@ -1,0 +1,12 @@
+describe('cadastrar_tenant', () => {
+  it('Cadastrar Tenant', () => {
+    cy.visit('https://app-test.pulsus.mobi/login')
+    cy.get('#identifier').type('bruno.souza@pulsus.mobi')
+    cy.get('#password').type('Bruno.pulsus#331')
+    cy.get('#action').click()
+    cy.get('[data-cy="account-dropdown"] > .icon > svg').click()
+    cy.get('.tenant-select-toggle').click()
+    cy.get('[title="ASD COMERCIO DE BEBIDAS E ALIMENTOS LTDA"] > :nth-child(1)').click()
+    cy.get('[href="/devices_new"] > .nav-item-label').click()
+    cy.xpath('//*[@id="main-container"]/section/div/div/button').click()
+    .search > button:nth-child(2)
